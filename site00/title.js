@@ -1,8 +1,20 @@
-const   amateur = [...document.querySelectorAll('.text--amateur')];
+const   amateur = [...document.querySelectorAll('.text--amateur')],
+        sketchGallery = [...document.querySelectorAll('.text--sketch-gallery')],
+        borderLeft = [...document.querySelectorAll('.box-border-left')];
 
 window.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
+
+        borderLeft.forEach((div, idx) => {
+            setTimeout(() => {
+                div.classList.add('active');
+            })
+        });
+    })
+    
+    setTimeout(() => {
+
         amateur.forEach((div, idx) => {
             setTimeout(() => {
                 div.classList.add('active');
@@ -16,6 +28,35 @@ window.addEventListener('DOMContentLoaded', () => {
             : idx * 100
             )
         });
-    })
+
+        sketchGallery.forEach((div, idx) => {
+            setTimeout(() => {
+                div.classList.add('active');
+            }, idx == 0 ? (idx + 1) * 600 : 
+            idx == 1 ? idx * 500 :
+            idx == 2 ? (idx - 1) * 400 :
+            idx == 3 ? (idx - 2) * 300 :
+            idx == 4 ? (idx - 3) * 200 :
+            idx == 5 ? (idx - 4) * 100 :
+            
+            idx == 6 ? (idx - 5) * 100 :
+            idx == 7 ? (idx - 6) * 200 :
+            idx == 8 ? (idx - 7) * 300 :
+            idx == 9 ? (idx - 8) * 400 :
+            idx == 10 ? (idx - 9) * 500 :
+            idx == 11 ? (idx - 10) * 600 :
+            idx == 12 ? (idx - 11) * 700 :
+             idx * 100)
+        });
+        
+    }, 1500)
+
+    setTimeout(() => {
+        borderLeft.forEach((div, idx) => {
+            setTimeout(() => {
+                div.classList.add('fade');
+            })
+        })
+    }, 3000)
     
 })
