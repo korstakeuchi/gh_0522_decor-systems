@@ -1,6 +1,9 @@
 const   amateur = [...document.querySelectorAll('.text--amateur')],
         sketchGallery = [...document.querySelectorAll('.text--sketch-gallery')],
-        borderLeft = [...document.querySelectorAll('.box-border-left')];
+        borderLeft = [...document.querySelectorAll('.box-border-left')],
+        imgWrap = document.querySelector('.img-wrap'),
+        imgsecborderLeft = document.querySelector('.img-sec-borderlineLeft'),
+        imgsecborderRight = document.querySelector('.img-sec-borderlineRight');
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -11,6 +14,10 @@ window.addEventListener('DOMContentLoaded', () => {
                 div.classList.add('active');
             })
         });
+
+        imgsecborderLeft.classList.add('active');
+        imgsecborderRight.classList.add('active');
+        
     })
     
     setTimeout(() => {
@@ -57,6 +64,9 @@ window.addEventListener('DOMContentLoaded', () => {
                 div.classList.add('fade');
             })
         })
-    }, 3000)
+
+        imgWrap.classList.add('active');
+        
+    }, 2500)
     
 })

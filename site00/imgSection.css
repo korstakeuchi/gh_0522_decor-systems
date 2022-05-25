@@ -1,0 +1,67 @@
+.img-section{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    
+}
+
+.img-wrap{
+    position: relative;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    overflow: hidden;
+    transition: 1s ease-in-out;
+}
+
+.img{
+    background-image: url(./assets/img/pexels-daian-gan-102127.jpeg);
+        
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.6);
+    transition: 1s ease-in-out;
+
+    z-index: 1;
+}
+
+.img-wrap.active{
+    opacity: 1;
+}
+.img-wrap.active > .img{
+    transform: scale(1);
+}
+
+
+.img-sec-borderlineLeft{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    opacity: 0;
+
+    background-color: black;
+}
+.img-sec-borderlineRight{
+    position: absolute;
+    top: 0;
+    right: 50%;
+    width: 0;
+    height: 1px;
+    opacity: 0;
+
+    background-color: black;
+}
+.img-sec-borderlineLeft.active,
+.img-sec-borderlineRight.active{
+    width: 50%;
+    opacity: .5;
+    transition: 2s ease-in-out;
+}
